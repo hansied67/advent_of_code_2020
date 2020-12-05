@@ -70,18 +70,15 @@ def get_input(in_file):
 def main():
     file_input = get_input(IN_FILE)
 
+    ids = sorted([BoardingPassEntry(_entry).id for _entry in file_input])
+
     # part 1
-    highest_id = 0
-    for _entry in file_input:
-        entry = BoardingPassEntry(_entry)
-        if entry.id > highest_id:
-            highest_id = entry.id
-    print(highest_id)
+    highest_id = ids[-1]
+    print("Part 1:\n\tHighest ID:\t{}".format(highest_id))
 
     # part 2
-    ids = sorted([BoardingPassEntry(_entry).id for _entry in file_input])
     possible_id = [_id for _id in range(ids[0], ids[-1]) if _id not in ids][0]
-    print(possible_id)
+    print("Part 2:\n\tLast ID:\t{}".format(possible_id))
 
 
 if __name__ == '__main__':
