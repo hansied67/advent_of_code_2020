@@ -32,7 +32,7 @@ def count_unanimous_answers(survey_result: list) -> int:
     if len(survey_result) != 1:
         for answer_block in survey_result[1:]:
             for answer in unanimous_answers_temp:
-                if answer not in answer_block:
+                if answer not in answer_block and unanimous_answers:
                     unanimous_answers = unanimous_answers.replace(answer, '')
 
     return len(unanimous_answers)
