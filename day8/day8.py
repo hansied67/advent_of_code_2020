@@ -99,9 +99,9 @@ def main():
         instructions_dict_temp[_c] = [' '.join([instruction_pre_mod, _instruction[0].split(' ')[1]]), 0]
 
         count_fixed = do_instruction_until_repeat_if_reaches_eof(instructions_dict_temp, instructions_dict_temp[0][0])
+
         if count_fixed[1]:
             print(count_fixed[0])
-        part2 = instructions_dict.copy()
 
 
 if __name__ == '__main__':
