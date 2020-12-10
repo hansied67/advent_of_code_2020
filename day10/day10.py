@@ -28,7 +28,7 @@ def chain_differences(adapters: list) -> (int, int):
     return diff_1, diff_3
 
 
-def get_all_unique_sequences_count(adapters: list) -> list:
+def get_all_unique_sequences_count(adapters: list) -> int:
     diff = np.array(np.diff(adapters))
 
     skips = list(map(len, ''.join('-' if x == 1 else '*' for x in diff).split('*')))
